@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:3000/",
+    publicPath: "http://localhost:3333/",
   },
 
   resolve: {
@@ -12,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 3000,
+    port: 3333,
     historyApiFallback: true,
   },
 
@@ -41,19 +41,22 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "solid_app_share",
+      name: "react_app",
       filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {
-        // 這裡是用來定義分享出去的code
-        "./Counter": "./src/Counter.jsx",
-        "./CounterWrapper": "./src/CounterWrapper.jsx",
+      remotes: {
+        // 這裡是for react的code,如果需要引用其他框架的code的話要另外處裡
+        solid_app_share: "solid_app_share@http://localhost:3000/remoteEntry.js"
       },
+      exposes: {},
       shared: {
         ...deps,
-        "solid-js": {
+        react: {
           singleton: true,
-          requiredVersion: deps["solid-js"],
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
         },
       },
     }),
