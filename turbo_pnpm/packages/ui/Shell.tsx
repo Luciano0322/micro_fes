@@ -13,6 +13,7 @@ import { useAppShell } from "./index";
 
 export const Shell: React.FunctionComponent<{
   title: string;
+  children: React.ReactNode;
 }> = ({ title, children }) => {
   const {user, score, setUser } = useAppShell();
   const theme = useMantineTheme();
