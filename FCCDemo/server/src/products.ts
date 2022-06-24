@@ -31,7 +31,23 @@ const products: Product[] = [
     description: 'Do you know what is it?',
     image: 'http://localhost:8080/product_3.jpeg',
     longDescription: 'Do you belived this little item could sele on Amazon...'
-  }
+  },
+  {
+    id: 4,
+    name: 'price up',
+    price: 999.99,
+    description: 'Do you know what is it?',
+    image: 'http://localhost:8080/product_4.jpeg',
+    longDescription: 'Do you belived this little item could sele on Amazon...'
+  },
+  {
+    id: 5,
+    name: 'just kidding',
+    price: 19.99,
+    description: 'Do you know what is it?',
+    image: 'http://localhost:8080/product_5.png',
+    longDescription: 'Do you belived this little item could sele on Amazon...'
+  },
 ]
 
 export default products;

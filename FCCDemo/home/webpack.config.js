@@ -48,6 +48,7 @@ module.exports = {
         // 這裡擺的為要輸出的檔案
         "./Header": "./src/Header.jsx",
         "./Footer": "./src/Footer.jsx",
+        "./products": "./src/products.js",
       },
       shared: {
         ...deps,
