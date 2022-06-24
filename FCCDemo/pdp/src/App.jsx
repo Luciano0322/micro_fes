@@ -2,6 +2,7 @@ import React, { Suspense, useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.scss";
+import "remixicon/fonts/remixicon.css";
 
 import SafeComponent from "./SafeComponent";
 import Header from "home/Header";
