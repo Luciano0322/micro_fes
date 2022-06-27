@@ -15,9 +15,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "tsconfig": "workspace:*",
+    "tsconfig": "*",
     "typescript": "^4.7.4",
-    "ui": "workspace:*",
+    "ui": "*",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
