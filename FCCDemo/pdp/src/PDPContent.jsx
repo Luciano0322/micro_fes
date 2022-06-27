@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { getProductById, currency } from 'home/products'
 import { useParams } from 'react-router-dom'
+import placeAddToCart from 'addtocart/placeAddToCart' // from solid framework
 
 const PDPContent = () => {
   const { id } = useParams();
@@ -16,6 +17,14 @@ const PDPContent = () => {
     }
   }, [id]);
 
+  const addToCart = useRef(null)
+
+  useEffect(() => {
+    if (addToCart.current) {
+      placeAddToCart(addToCart.current, product.id);
+    }
+  }, [product])
+  
   if (!product) return null;
 
   return (
@@ -31,6 +40,9 @@ const PDPContent = () => {
           <div className='font-bold text-3xl flex-end'>
             {currency.format(product.price)}
           </div>
+        </div>
+        <div ref={addToCart}>
+
         </div>
         <div className='mt-10'>{product.description}</div>
         <div className='text-md mt-10'>{product.longDescription}</div>

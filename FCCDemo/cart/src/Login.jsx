@@ -21,7 +21,7 @@ const Login = () => {
           style={{
             width: 300,
             top: "2rem",
-            // left: -250,
+            left: '-250px',
           }}
         >
           <input
