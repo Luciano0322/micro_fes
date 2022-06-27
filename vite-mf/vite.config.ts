@@ -12,17 +12,12 @@ export default defineConfig({
       exposes: {
         './InfoCard': './src/components/InfoCard.tsx'
       },
-      shared: ["react","react-dom"] 
+      shared: ['react'] 
     })
   ],
-  // build: {
-  //   lib: {
-  //     entry: './src/main.tssx',
-  //     formats: ['cjs', 'es'],
-  //     fileName: (format) => `index.${format}.js`,
-  //   },
-  //   rollupOptions: {
-  //     external: ['react', 'react-dom']
-  //   }
-  // }
+  build: {
+    target: 'esnext',
+    minify: false,
+    cssCodeSplit: false
+  }
 })
