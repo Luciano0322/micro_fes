@@ -16,3 +16,6 @@
 - 當然在使用上相同框架的使用還是會比跨框架使用來得有效率。
 - 有了這樣的工具你可以將專案分成更小的模塊來規劃，每個模塊的規劃上可以考慮使用層面的多寡，以便於橫向的整合。
 4. vite的module federation
+- 新的`@module-federation/vite` 套件仍存在很多設定上的問題，目前要在vite的環境下使用還是得靠`@originjs/vite-plugin-federation`
+- 使用`@originjs/vite-plugin-federation` 的作法就必須先build出靜態檔案再做serve的動作，相對 webpack 的方式還是有短板
+- `@module-federation` 屬官方推薦庫，對於rspack的支持度較為友善，之後再陸續補上。
