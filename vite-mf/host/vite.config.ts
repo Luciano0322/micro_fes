@@ -7,13 +7,11 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'remote_app',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './Button': './src/components/Button',
-        './store': './src/store',
+      name: "host",
+      remotes: {
+        remoteApp: "http://localhost:5001/assets/remoteEntry.js",
       },
-      shared: ['react', 'react-dom', 'jotai'],
+      shared: ['react', 'react-dom'],
     }),
   ],
   build: {
