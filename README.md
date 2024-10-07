@@ -8,6 +8,9 @@
 - 使用`@originjs/vite-plugin-federation` 的作法就必須先build出靜態檔案再做serve的動作，相對 webpack 的方式還是有短板
 - 運行優勢還是遠遠大於webpack，對於目前vite的支持度雖稱不上絲滑，但遠遠超出兩年前的水準，如果是採`@originjs/vite-plugin-federation` plugin 來運行，已經相對成熟許多。
 - `@module-federation` 屬官方推薦庫，對於rspack的支持度較為友善，之後再陸續補上。  
+3. rspack 的 module federation (參考rs-mf)
+- module-federation 官方推薦的作法，整合性遠遠大於vite的作法，此外無痛從webpack轉移的部分也是非常值得讚揚的細節。
+- 同為 rust 開發的 build tool 確實很有潛力取代現有的vite, 操作 module-federation 的時候不需要將專案先做 build & serve 處理，這點保留了如同webpack plugin 的特點，相當優秀。  
 
 ## Build time sharing
 1. monorepo
